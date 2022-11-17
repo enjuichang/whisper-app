@@ -16,9 +16,9 @@ if audio_file is not None:
         if st.sidebar.button("Transcribe"):
             if audio_file is not None:
                 st.sidebar.text("Transcribing...")
-                print(temp.name)
-                print(temp)
-                transcript = model.transcribe(temp.name)
+                st.sidebar.text(temp.name)
+                st.sidebar.text(temp)
+                transcript = model.transcribe(temp..name)
                 st.sidebar.success("Transcription complete")
                 st.text(transcript["text"])
             else:
