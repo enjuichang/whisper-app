@@ -17,7 +17,7 @@ if st.sidebar.button("Transcribe"):
     if audio_file is not None:
         st.sidebar.text("Transcribing...")
         fp.seek(0)
-        transcript = model.transcribe(fp.read())
+        transcript = model.transcribe(fp.read().name)
         fp.close()
         st.sidebar.success("Transcription complete")
         st.text(transcript["text"])
