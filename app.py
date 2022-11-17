@@ -9,7 +9,7 @@ model = whisper.load_model("base")
 
 audio_file = st.file_uploader("Choose a file", type= ["wav","mp3","m4a"])
 if audio_file is not None:
-    with tempfile.NamedTemporaryFile(dir="./", delete=False) as temp:
+    with tempfile.NamedTemporaryFile(delete=False) as temp:
         temp.write(audio_file.getbuffer())
         st.success("Saved File")
 
