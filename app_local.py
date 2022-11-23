@@ -21,13 +21,20 @@ if st.sidebar.button("Transcribe"):
 
         st.sidebar.success("Transcription complete")
         st.text(transcript["text"][:100])
+
+        st.download_button("Download", transcript["text"])
+        # with open('output/download.txt') as f:
+        #     st.download_button('Download', f)  # Defaults to 'text/plain'
+        
+        st.sidebar.text("Downloading...")
+        st.sidebar.success("Download complete")
     else:
         st.error("Please Upload an Audio File")
 
-if st.sidebar.button("Download"):
-    if transcript is not None:
-        st.sidebar.text("Downloading...")
-        st.sidebar.success("Download complete")
-        st.download_button("Download", transcript["text"])
-    else:
-        st.error("Please Transcribe an Audio File")
+# if st.sidebar.button("Download"):
+    # if transcript is not None:
+    #     st.sidebar.text("Downloading...")
+    #     st.sidebar.success("Download complete")
+    #     st.download_button("Download", transcript["text"])
+    # else:
+    #     st.error("Please Transcribe an Audio File")
